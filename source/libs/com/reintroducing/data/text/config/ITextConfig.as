@@ -1,0 +1,1 @@
+package com.reintroducing.data.text.config{	/**	 * Interface for TextConfig value objects.	 * 	 * @author Matt Przybylski [http://www.reintroducing.com]	 * @version 1.0	 */	public interface ITextConfig	{		function output():void;		//- END INTERFACE -----------------------------------------------------------------------------------------	}}

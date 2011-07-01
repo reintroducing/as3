@@ -1,0 +1,39 @@
+/* -----------------------------------
+	COMMON
+----------------------------------- */
+
+.header {
+	font-family: Trade Gothic Bold Condensed No. 20;
+	font-size: 20pt;
+	color: #000000;
+}
+
+.bodyCopy {
+	font-family: Trade Gothic;
+	font-size: 12pt;
+	color: #666666;
+}
+
+.footer {
+	font-family: Trade Gothic Light;
+	font-size: 10pt;
+	color: #000000;
+}
+
+.htmlTest1 {
+	font-family: Trade Gothic;
+	font-size: 14pt;
+	color: #FF0000;
+}
+
+.htmlTest2 {
+	font-family: Trade Gothic;
+	font-size: 14pt;
+	color: #00FF00;
+}
+
+.inputTest {
+	font-family: Trade Gothic;
+	font-size: 12pt;
+	color: #888888;
+}
