@@ -22,12 +22,17 @@ package com.reintroducing.sound
 	 * The supplementary SoundItem class is dependent on TweenLite (http://www.tweenlite.com) to aid in easily fading the volume of the sound.
 	 * 
 	 * @author Matt Przybylski [http://www.reintroducing.com]
-	 * @version 1.4.1
+	 * @version 1.4.2
 	 * 
 	 * VERSION HISTORY:
 	 *
+	 * 1.4.2
+	 * 		- Fixed SoundManager to report proper loop and position if pauseAllSounds() was used and then you used playAllSounds() (thanks Jean-Sébastien Leduc).
+	 * 		
+	 * 		- Changed version number on SoundItem to match SoundManager to avoid confusion.
+	 * 
 	 * 1.4.1
-	 * 		- REALLY fixed the muteAllSouns() method this time :) (thanks Ben Reynhart for pointing it out)
+	 * 		- REALLY fixed the muteAllSouns() method this time :) (thanks Ben Reynhart for pointing it out).
 	 * 
 	 * 1.4
 	 * 		- General refactoring.
@@ -104,8 +109,8 @@ package com.reintroducing.sound
 		
 		public function SoundManager() 
 		{
-			this._soundsDict = new Dictionary(true);
-			this._sounds = [];
+			_soundsDict = new Dictionary(true);
+			_sounds = [];
 			
 			if (!_allowInstance)
 			{
@@ -352,12 +357,12 @@ package com.reintroducing.sound
 					if ((_soundsDict[id] as SoundItem).pausedByAll)
 					{
 						(_soundsDict[id] as SoundItem).pausedByAll = false;
-						playSound(id, (_soundsDict[id] as SoundItem).volume, 0, 0, $resumeTweens);
+						playSound(id, (_soundsDict[id] as SoundItem).volume, (_soundsDict[id] as SoundItem).position, (_soundsDict[id] as SoundItem).loops, $resumeTweens);
 					}
 				}
 				else
 				{
-					playSound(id, (_soundsDict[id] as SoundItem).volume, 0, 0, $resumeTweens);
+					playSound(id, (_soundsDict[id] as SoundItem).volume, (_soundsDict[id] as SoundItem).position, (_soundsDict[id] as SoundItem).loops, $resumeTweens);
 				}
 			}
 			

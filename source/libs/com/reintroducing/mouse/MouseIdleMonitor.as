@@ -14,7 +14,7 @@ package com.reintroducing.mouse
 	 * with a params object that contains the time the user has been idle, in milliseconds.
 	 * 
 	 * @author Matt Przybylski [http://www.reintroducing.com]
-	 * @version 1.0
+	 * @version 1.1
 	 */
 	public class MouseIdleMonitor extends EventDispatcher
 	{
@@ -71,6 +71,8 @@ package com.reintroducing.mouse
 		public function start():void
 		{
 			_stage.addEventListener(MouseEvent.MOUSE_MOVE, onMouseMove);
+			_stage.addEventListener(MouseEvent.MOUSE_DOWN, onMouseMove);
+			_stage.addEventListener(MouseEvent.MOUSE_UP, onMouseMove);
 			_timer.addEventListener(TimerEvent.TIMER, onTimer);
 			
 			_timer.start();
@@ -87,6 +89,8 @@ package com.reintroducing.mouse
 			_timer.reset();
 			
 			_stage.removeEventListener(MouseEvent.MOUSE_MOVE, onMouseMove);
+			_stage.removeEventListener(MouseEvent.MOUSE_DOWN, onMouseMove);
+			_stage.removeEventListener(MouseEvent.MOUSE_UP, onMouseMove);
 			_timer.removeEventListener(TimerEvent.TIMER, onTimer);
 		}
 	

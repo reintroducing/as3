@@ -16,7 +16,7 @@ package com.reintroducing.sound
 	 * A class that acts as a holder for a sound to be used in the SoundManager.
 	 * 
  	 * @author Matt Przybylski [http://www.reintroducing.com]
- 	 * @version 1.1.1
+ 	 * @version 1.4.2
  	 */
 	public class SoundItem extends EventDispatcher
 	{
